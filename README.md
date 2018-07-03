@@ -1,8 +1,9 @@
 Note: This is an active fork of [recharts/recharts](https://github.com/recharts/recharts).
 
-It's available at https://www.npmjs.com/package/@metabolize/recharts.
+[![Build Status](https://travis-ci.org/metabolize/recharts.svg)](https://travis-ci.org/metabolize/recharts)
+[![npm version](https://img.shields.io/npm/v/@metabolize/recharts.svg)](https://npmjs.com/package/@metabolize/recharts)
 
-![npm version](https://img.shields.io/npm/v/@metabolize/recharts.svg)
+----
 
 # Recharts
 
