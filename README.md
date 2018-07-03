@@ -1,3 +1,9 @@
+Note: This is an active fork of [recharts/recharts](https://github.com/recharts/recharts).
+
+It's available at https://www.npmjs.com/package/@metabolize/recharts.
+
+![npm version](https://img.shields.io/npm/v/@metabolize/recharts.svg)
+
 # Recharts
 
 [![Rocket.Chat](https://demo.rocket.chat/images/join-chat.svg)](https://demo.rocket.chat/channel/recharts)

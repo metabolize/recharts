@@ -1,7 +1,7 @@
 {
-  "name": "recharts",
-  "version": "1.0.0-beta.10",
-  "description": "React charts",
+  "name": "@metabolize/recharts",
+  "version": "1.0.0-beta.10.metabolize.1",
+  "description": "Active fork of recharts",
   "main": "lib/index",
   "module": "es6/index",
   "jsnext:main": "es6/index",
