@@ -90,8 +90,8 @@ class ReferenceArea extends Component {
       y2 = yRange[1];
     }
 
-    if (validateCoordinateInRange(x1, xScale) && validateCoordinateInRange(x2, xScale) &&
-      validateCoordinateInRange(y1, yScale) && validateCoordinateInRange(y2, yScale)) {
+    if (validateCoordinateInRange(x1, xScale) || validateCoordinateInRange(x2, xScale) ||
+      validateCoordinateInRange(y1, yScale) || validateCoordinateInRange(y2, yScale)) {
       return {
         x: Math.min(x1, x2),
         y: Math.min(y1, y2),
