@@ -75,7 +75,7 @@ class ReferenceArea extends Component {
       y: hasY2 ? scale.y.apply(yValue2) : scale.y.rangeMax,
     };
 
-    if (ifOverflowMatches(this.props, 'remove') &&
+    if (ifOverflowMatches(this.props, 'discard') &&
       (!scale.isInRange(p1) || !scale.isInRange(p2))) {
       return null;
     }

@@ -45,7 +45,7 @@ class ReferenceDot extends Component {
 
   static defaultProps = {
     isFront: false,
-    alwaysShow: false,
+    ifOverflow: 'discard',
     xAxisId: 0,
     yAxisId: 0,
     r: 10,

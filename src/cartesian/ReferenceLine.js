@@ -66,7 +66,7 @@ class ReferenceLine extends Component {
 
   static defaultProps = {
     isFront: false,
-    alwaysShow: false,
+    ifOverflow: 'discard',
     xAxisId: 0,
     yAxisId: 0,
     fill: 'none',
@@ -83,7 +83,7 @@ class ReferenceLine extends Component {
       const { y: yCoord, yAxis: { orientation } } = this.props;
       const coord = scales.y.apply(yCoord);
 
-      if (ifOverflowMatches(this.props, 'remove') &&
+      if (ifOverflowMatches(this.props, 'discard') &&
         !scales.y.isInRange(coord)) {
         return null;
       }
@@ -97,7 +97,7 @@ class ReferenceLine extends Component {
       const { x: xCoord, xAxis: { orientation } } = this.props;
       const coord = scales.x.apply(xCoord);
 
-      if (ifOverflowMatches(this.props, 'remove') &&
+      if (ifOverflowMatches(this.props, 'discard') &&
         !scales.x.isInRange(coord)) {
         return null;
       }

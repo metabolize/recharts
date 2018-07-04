@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { BarChart, ReferenceLine, Bar, XAxis, YAxis } from 'recharts';
 import { mount, render } from 'enzyme';
 
-describe.only('<ReferenceLine />', () => {
+describe('<ReferenceLine />', () => {
   const data = [
     { name: '201102', uv: -6.11, pv: 0 },
     { name: '201103', uv: 0.39, pv: 0 },
@@ -113,7 +113,7 @@ describe.only('<ReferenceLine />', () => {
         <XAxis dataKey="name" />
         <YAxis tickCount={7} />
         <Bar dataKey="uv" />
-        <ReferenceLine y={20} stroke="#666" label={renderLabel} labelPosition="start" />
+        <ReferenceLine y={20} stroke="#666" label={renderLabel} ifOverflow="keep" labelPosition="start" />
       </BarChart>
     );
     expect(wrapper.find('.recharts-reference-line-line').length).to.equal(1);
@@ -143,7 +143,7 @@ describe.only('<ReferenceLine />', () => {
         <XAxis dataKey="name" />
         <YAxis tickCount={7} />
         <Bar dataKey="uv" />
-        <ReferenceLine y={20} stroke="#666" label={<Label text="Custom Text" />} />
+        <ReferenceLine y={20} stroke="#666" ifOverflow="keep" label={<Label text="Custom Text" />} />
       </BarChart>
     );
     expect(wrapper.find('.recharts-reference-line text').text()).to.equal('Custom Text');
