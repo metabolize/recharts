@@ -1463,8 +1463,7 @@ const generateCategoricalChart = ({
 
     renderClipPath() {
       const { clipPathId } = this;
-      const { offset } = this.state;
-      const { left, top, height, width } = offset;
+      const { offset: { left, top, height, width } } = this.state;
 
       return (
         <clipPath id={clipPathId}>
