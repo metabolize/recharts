@@ -157,7 +157,7 @@ const generateCategoricalChart = ({
         ...this.updateStateOfAxisMapsOffsetAndStackGroups({ props, ...defaultState, updateId }) };
 
       this.uniqueChartId = _.isNil(props.id) ? uniqueId('recharts') : props.id;
-      this.clipPathId = `recharts-clip-${this.uniqueChartId}`;
+      this.clipPathId = `${this.uniqueChartId}-clip`;
 
       if (props.throttleDelay) {
         this.triggeredAfterMouseMove = _.throttle(this.triggeredAfterMouseMove,
@@ -1177,6 +1177,7 @@ const generateCategoricalChart = ({
       const key = element.key || '_recharts-cursor';
       const cursorProps = {
         stroke: '#ccc',
+        pointerEvents: 'none',
         ...offset,
         ...restProps,
         ...getPresentationAttributes(element.props.cursor),
@@ -1348,6 +1349,7 @@ const generateCategoricalChart = ({
 
     renderReferenceElement = (element, displayName, index) => {
       if (!element) { return null; }
+      const { clipPathId } = this;
       const { xAxisMap, yAxisMap, offset } = this.state;
       const { xAxisId, yAxisId } = element.props;
 
@@ -1361,7 +1363,7 @@ const generateCategoricalChart = ({
           width: offset.width,
           height: offset.height,
         },
-        clipPath: `url(#${this.clipPathId})`,
+        clipPathId,
       });
     };
 
@@ -1460,11 +1462,12 @@ const generateCategoricalChart = ({
     };
 
     renderClipPath() {
+      const { clipPathId } = this;
       const { offset } = this.state;
       const { left, top, height, width } = offset;
 
       return (
-        <clipPath id={this.clipPathId}>
+        <clipPath id={clipPathId}>
           <rect x={left} y={top} height={height} width={width} />
         </clipPath>
       );
