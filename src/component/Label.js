@@ -32,7 +32,7 @@ const propTypes = {
     'top', 'left', 'right', 'bottom', 'inside', 'outside',
     'insideLeft', 'insideRight', 'insideTop', 'insideBottom',
     'insideTopLeft', 'insideBottomLeft', 'insideTopRight', 'insideBottomRight',
-    'insideStart', 'insideEnd', 'end', 'center',
+    'insideStart', 'insideEnd', 'end', 'center', 'centerTop', 'centerBottom'
   ]),
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -130,6 +130,24 @@ const getAttrsOfPolarLabel = (props) => {
     };
   }
 
+  if (position === 'centerTop') {
+    return {
+      x: cx,
+      y: cy,
+      textAnchor: 'middle',
+      verticalAnchor: 'start',
+    };
+  }
+
+  if (position === 'centerBottom') {
+    return {
+      x: cx,
+      y: cy,
+      textAnchor: 'middle',
+      verticalAnchor: 'end',
+    };
+  }
+
   const r = (innerRadius + outerRadius) / 2;
   const { x, y } = polarToCartesian(cx, cy, r, midAngle);
 
@@ -151,7 +169,7 @@ const getAttrsOfCartesianLabel = (props) => {
       x: x + width / 2,
       y: y - sign * offset,
       textAnchor: 'middle',
-      verticalAnchor: 'end',
+      verticalAnchor: sign > 0 ? 'end' : 'start',
     };
   }
 
