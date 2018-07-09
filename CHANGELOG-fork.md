@@ -1,3 +1,10 @@
+## 1.0.1-metabolize.3
+
+### feature
+
+- Allow specifying endpoints on ReferenceLine to draw an arbitrary line
+  segment.
+
 ## 1.0.1-metabolize.2
 
 ### feature

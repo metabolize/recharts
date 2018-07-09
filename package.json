@@ -1,6 +1,6 @@
 {
   "name": "@metabolize/recharts",
-  "version": "1.0.1-metabolize.2",
+  "version": "1.0.1-metabolize.3",
   "description": "Active fork of recharts",
   "main": "lib/index",
   "module": "es6/index",
