@@ -127,7 +127,7 @@ class ReferenceArea extends Component {
 
     return (
       <Layer className={classNames('recharts-reference-area', className)}>
-        {this.constructor.renderRect(shape, { ...this.props, ...rect })}
+        {this.constructor.renderRect(shape, { clipPath, ...this.props, ...rect })}
         {Label.renderCallByParent(this.props, rect)}
       </Layer>
     );
